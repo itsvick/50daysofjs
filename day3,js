@@ -1,0 +1,24 @@
+// Question : Write a program to reverse a given integer number.
+
+// Solution 1
+function reverseNum(num) {
+  let reversedNum = 0;
+  while (num > 0) {
+    const reminder = num % 10;
+    reversedNum = reversedNum * 10 + reminder;
+    num = parseInt(num / 10);
+  }
+  return reversedNum;
+}
+
+console.log("reversed Number", reverseNum(5459));
+
+
+// Solution 2
+function reverseNumber(num) {
+  if (typeof num !== 'number') return 'Not a number';
+  let reverseNumber = num.toString().split('').reverse().join('');
+  return reverseNumber.endsWith('-') ?  '-'+parseInt(reverseNumber) : parseInt(reverseNumber);
+}
+
+console.log("Reversed Number", reverseNumber(12321043));
